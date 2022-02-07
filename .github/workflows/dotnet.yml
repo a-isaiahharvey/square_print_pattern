@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ./CSharp/SquarePrintPattern
+      run: cd ./CSharp/SquarePrintPattern && dotnet restore 
     - name: Build
-      run: dotnet build ./CSharp/SquarePrintPattern --no-restore
+      run: cd ./CSharp/SquarePrintPattern && dotnet build --no-restore
     - name: Test
-      run: dotnet test ./CSharp/SquarePrintPattern --no-build --verbosity normal
+      run: cd ./CSharp/SquarePrintPattern && dotnet test --no-build --verbosity normal
